@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Feed Redactor for LinkedIn",
+  "version": "1.2",
+  "description": "Redacts LinkedIn feed posts and comments containing specified keywords.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["*://*.linkedin.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
